@@ -1,29 +1,31 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
 import { Button } from "antd";
-import "./app.less";
+import Application from "./styledComponents/AppStyled";
+import AppLogo from "./styledComponents/AppLogoStyled";
+import AppHeader from "./styledComponents/AppHeaderStyled";
+import Navigation from "./styledComponents/NavigationStyled";
+import "./assets/less/app.less";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <Application>
+        <AppHeader>
+          <AppLogo src={logo} alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
+          <Navigation
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+          </Navigation>
           <Button type="primary">Ant Design Button</Button>
-        </header>
-      </div>
+        </AppHeader>
+      </Application>
     );
   }
 }
