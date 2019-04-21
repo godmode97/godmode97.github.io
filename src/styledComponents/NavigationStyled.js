@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Navigation = styled.a`
-  color: #61dafb;
-  &:hover {
-    color: #3b6e7b;
-  }
+const Navigation = styled.nav`
+  margin: 30px;
 `;
 
 export default props => <Navigation {...props} />;
