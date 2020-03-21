@@ -16,7 +16,7 @@
     "react-scripts": "2.1.8",
     "serve": "^11.0.0",
     "styled-components": "^4.2.0",
-    "typescript": "^3.4.4",
+    "typescript": "^3.8.3",
     "typewriter-effect": "^2.5.3"
   },
   "scripts": {
