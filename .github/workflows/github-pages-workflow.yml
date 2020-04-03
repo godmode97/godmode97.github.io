@@ -1,0 +1,45 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+      env:
+        CI: true
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.3.0
+      with:
+        # Git branch where assets will be deployed
+        target_branch: master
+        # Create incremental commit instead of doing push force
+        keep_history: true
+        # Allow an empty commit to be created
+        # Build directory to deploy
+        build_dir: build
+        # Commit author's name
+        committer_name: Neil James Monzales
+        # Commit author's email
+        committer_email: neiljames97@gmail.com
