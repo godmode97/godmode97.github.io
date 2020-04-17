@@ -15,7 +15,7 @@
     "react-router": "^5.0.0",
     "react-scripts": "2.1.8",
     "serve": "^11.0.0",
-    "styled-components": "^4.2.0",
+    "styled-components": "^5.1.0",
     "typescript": "^3.8.3",
     "typewriter-effect": "^2.5.3"
   },
